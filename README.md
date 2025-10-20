@@ -1,0 +1,1 @@
+This is my second game I'm working on. I'm trying to make a 2D Platformer focusing on melee combat. I plan to create a mini fighting or adventure game featuring different playable characters and focused on duels.
