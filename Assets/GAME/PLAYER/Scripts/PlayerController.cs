@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 5f;
     private float currentSpeed;
-    public float moveX;
+    private float moveX;
+    public float facingDirection;
     private float moveMagnitude;
     private bool jumpRequested;
     public float jumpForce = 10f;
@@ -35,13 +36,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask wallLayer;
     public Transform wallCheck;
+    public Transform shootPoint;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         anim = GetComponent<Animator>();
+        
         currentSpeed = moveSpeed;
+        facingDirection = 1;
     }
 
     // Update is called once per frame
@@ -87,14 +91,15 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             moveX = Input.GetAxisRaw("Horizontal"); // Move
+            if (moveX != 0) facingDirection = Mathf.Sign(moveX);
         }
         moveMagnitude = Mathf.Abs(moveX);
 
-        if (moveX < 0)
+        if (facingDirection < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (moveX > 0)
+        else if (facingDirection > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
@@ -123,6 +128,11 @@ public class PlayerController : MonoBehaviour
             {
                 ComboAttack();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && !isAttacking) // Ranged Attack
+        {
+            RangedAttack();
         }
     }
     #endregion
@@ -199,6 +209,14 @@ public class PlayerController : MonoBehaviour
         comboTimer = 0f;
 
         anim.SetTrigger("JumpAttack");
+    }
+
+    private void RangedAttack()
+    {
+        isAttacking = true;
+        currentSpeed = 0f;
+
+        anim.SetTrigger("RangedAttack");
     }
 
     public void EndAttack()

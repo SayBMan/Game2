@@ -699,7 +699,7 @@ Transform:
   m_GameObject: {fileID: 750993676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.02, y: 1.09991, z: 0}
+  m_LocalPosition: {x: -13.02, y: 1.03, z: 0}
   m_LocalScale: {x: 1, y: 8.46, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,7 +933,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1692046041751814918, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1657777
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 1692046041751814918, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_LocalPosition.y
@@ -974,14 +974,6 @@ PrefabInstance:
     - target: {fileID: 4511202559195464783, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_Name
       value: Samurai_Archer
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024750349549738207, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
-      propertyPath: comboWindowDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024750349549738207, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
-      propertyPath: attackCooldownDuration
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -25,7 +25,38 @@ Transform:
   m_GameObject: {fileID: 40060609998971158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -0.53, z: 0}
+  m_LocalPosition: {x: 0.4, y: -0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1692046041751814918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3287473013041208031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4059315605712351924}
+  m_Layer: 3
+  m_Name: meleePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4059315605712351924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287473013041208031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.85, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +76,8 @@ GameObject:
   - component: {fileID: 558941348679813899}
   - component: {fileID: 5126195885233393239}
   - component: {fileID: 9024750349549738207}
+  - component: {fileID: -7309951868639507744}
+  - component: {fileID: -1365286516225911609}
   m_Layer: 3
   m_Name: Samurai_Archer
   m_TagString: Player
@@ -66,6 +99,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6433802599970987527}
+  - {fileID: 7071129840261353585}
+  - {fileID: 4059315605712351924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1752475887840869233
@@ -234,12 +269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  moveX: 0
+  facingDirection: 0
   jumpForce: 10
   gravity: 3
   isWallSliding: 0
   wallSlideSpeed: 2
   isAttacking: 0
+  comboWindowDuration: 1
+  maxCombo: 3
   boxSize: {x: 0.31, y: 0.21}
   castDistance: 1.27
   groundLayer:
@@ -249,3 +286,61 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   wallCheck: {fileID: 6433802599970987527}
+  shootPoint: {fileID: 7071129840261353585}
+--- !u!114 &-7309951868639507744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511202559195464783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9657911d6ffe489438d110ed17ad30b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttackController
+--- !u!114 &-1365286516225911609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511202559195464783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb093a3f5553bf449a0c5c9044324bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RangedAttackController
+  projectilePrefab: {fileID: 1633051987270349090, guid: ee679fd66553e664da295709c08f3d84, type: 3}
+  shootPoint: {fileID: 7071129840261353585}
+--- !u!1 &4647595136049206038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7071129840261353585}
+  m_Layer: 3
+  m_Name: shootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7071129840261353585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647595136049206038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.04, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1692046041751814918}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
