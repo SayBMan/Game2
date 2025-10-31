@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Combat")]
     public bool isAttacking;
-    //public float attackCooldownDuration = 0.18f;
-    //private float attackCooldownTimer = 0f;
     public float comboWindowDuration = 0.6f;
     private float comboTimer = 0f;
     public int maxCombo = 3;
@@ -37,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallLayer;
     public Transform wallCheck;
     public Transform shootPoint;
+
+    [Header("Script References")]
+    public MeleeAttackController meleeAttackController;
+    public RangedAttackController rangedAttackController;
 
     void Awake()
     {
@@ -246,6 +248,22 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("MoveMagnitude", moveMagnitude); // move
     }
+
+    #region Forwarded Animation Events
+    public void EnableMeleeHitbox()
+    {
+        meleeAttackController.EnableHitbox();
+    }
+    public void DisableMeleeHitbox()
+    {
+        meleeAttackController.DisableHitbox();
+    }
+
+    public void RangedAttackProjectile()
+    {
+        rangedAttackController.ShootProjectile();
+    }
+    #endregion
 
     private void OnDrawGizmos()
     {

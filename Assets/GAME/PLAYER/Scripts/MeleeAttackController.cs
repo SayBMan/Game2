@@ -1,16 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class MeleeAttackController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public LayerMask enemyLayer;
+    public EnemyController enemyController;
+    Collider2D col;
+
+    void Awake()
     {
-        
+        col = GetComponent<Collider2D>();
+        col.isTrigger = true;
+        col.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnableHitbox()
     {
-        
+        col.enabled = true;
+    }
+
+    public void DisableHitbox()
+    {
+        col.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if ( ((1 << other.gameObject.layer) & enemyLayer.value) == 0 ) return;
+        enemyController.RecieveHit();
     }
 }

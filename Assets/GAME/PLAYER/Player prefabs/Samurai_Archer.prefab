@@ -40,6 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4059315605712351924}
+  - component: {fileID: 2924572254146955896}
+  - component: {fileID: 7503795083024705876}
   m_Layer: 3
   m_Name: meleePoint
   m_TagString: Untagged
@@ -56,12 +58,74 @@ Transform:
   m_GameObject: {fileID: 3287473013041208031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: -0.5, z: 0}
+  m_LocalPosition: {x: 1, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1692046041751814918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2924572254146955896
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287473013041208031}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.2519397, y: -0.17281008}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.95284235, y: 1.0230417}
+  m_EdgeRadius: 0
+--- !u!114 &7503795083024705876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287473013041208031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9657911d6ffe489438d110ed17ad30b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttackController
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyController: {fileID: 0}
 --- !u!1 &4511202559195464783
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,8 +140,6 @@ GameObject:
   - component: {fileID: 558941348679813899}
   - component: {fileID: 5126195885233393239}
   - component: {fileID: 9024750349549738207}
-  - component: {fileID: -7309951868639507744}
-  - component: {fileID: -1365286516225911609}
   m_Layer: 3
   m_Name: Samurai_Archer
   m_TagString: Player
@@ -94,12 +156,12 @@ Transform:
   m_GameObject: {fileID: 4511202559195464783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07, y: -1.71, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6433802599970987527}
   - {fileID: 7071129840261353585}
+  - {fileID: 6433802599970987527}
   - {fileID: 4059315605712351924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -287,32 +349,8 @@ MonoBehaviour:
     m_Bits: 128
   wallCheck: {fileID: 6433802599970987527}
   shootPoint: {fileID: 7071129840261353585}
---- !u!114 &-7309951868639507744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511202559195464783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9657911d6ffe489438d110ed17ad30b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttackController
---- !u!114 &-1365286516225911609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511202559195464783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eb093a3f5553bf449a0c5c9044324bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RangedAttackController
-  projectilePrefab: {fileID: 1633051987270349090, guid: ee679fd66553e664da295709c08f3d84, type: 3}
-  shootPoint: {fileID: 7071129840261353585}
+  meleeAttackController: {fileID: 7503795083024705876}
+  rangedAttackController: {fileID: 6091716025973987236}
 --- !u!1 &4647595136049206038
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7071129840261353585}
+  - component: {fileID: 6091716025973987236}
   m_Layer: 3
   m_Name: shootPoint
   m_TagString: Untagged
@@ -338,9 +377,23 @@ Transform:
   m_GameObject: {fileID: 4647595136049206038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.3, z: 0}
+  m_LocalPosition: {x: 1, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1692046041751814918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6091716025973987236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647595136049206038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb093a3f5553bf449a0c5c9044324bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RangedAttackController
+  projectilePrefab: {fileID: 1633051987270349090, guid: ee679fd66553e664da295709c08f3d84, type: 3}
+  shootPoint: {fileID: 7071129840261353585}
