@@ -321,13 +321,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 9024750349549738207, guid: 3919e8f9dce7ef143970f65f0853f3a8, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4511202559195464783, guid: 3919e8f9dce7ef143970f65f0853f3a8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 918295241}
+    - targetCorrespondingSourceObject: {fileID: 4511202559195464783, guid: 3919e8f9dce7ef143970f65f0853f3a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 918295247}
   m_SourcePrefab: {fileID: 100100000, guid: 3919e8f9dce7ef143970f65f0853f3a8, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -749,7 +752,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.67, y: -2.66, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.008, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 768784501}
@@ -875,6 +878,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e24522d51d1bc40a445618e22ba0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  enemyHealth: {fileID: 918295247}
+--- !u!114 &918295247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918295240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fd76ab9dea9fd499fbff85b979064b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  currentHealth: 3
+  maxHealth: 3
 --- !u!1001 &979304634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -885,11 +903,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1692046041751814918, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6
+      value: -5.9
       objectReference: {fileID: 0}
     - target: {fileID: 1692046041751814918, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6857138
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 1692046041751814918, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_LocalPosition.z
@@ -931,9 +949,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3287473013041208031, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4511202559195464783, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: m_Name
       value: Samurai_Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126195885233393239, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503795083024705876, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7503795083024705876, guid: 59e47712d92784748a76e0b09e3cfa08, type: 3}
       propertyPath: enemyController

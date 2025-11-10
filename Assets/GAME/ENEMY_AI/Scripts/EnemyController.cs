@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public EnemyHealth enemyHealth;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
     
-    public void RecieveHit()
+    public void RecieveHit(float damage)
     {
         Debug.Log("Hit by player");
+        enemyHealth.TakeDamage(damage);
     }
 }

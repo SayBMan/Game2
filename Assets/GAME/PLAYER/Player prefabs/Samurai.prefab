@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4129962508239210010}
   - component: {fileID: 558941348679813899}
   - component: {fileID: 5126195885233393239}
-  - component: {fileID: 9024750349549738207}
   m_Layer: 3
   m_Name: Samurai
   m_TagString: Player
@@ -222,39 +221,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.45, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &9024750349549738207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511202559195464783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe193e7bca4aa56449767e6a8f27f8af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
-  facingDirection: 0
-  jumpForce: 10
-  gravity: 3
-  isWallSliding: 0
-  wallSlideSpeed: 2
-  isAttacking: 0
-  comboWindowDuration: 0.6
-  maxCombo: 3
-  boxSize: {x: 0.31, y: 0.21}
-  castDistance: 1.27
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  wallCheck: {fileID: 6433802599970987527}
-  shootPoint: {fileID: 0}
-  meleeAttackController: {fileID: 0}
-  rangedAttackController: {fileID: 0}
 --- !u!1 &8401688420100329272
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,3 +316,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   enemyController: {fileID: 0}
+  damage: 0

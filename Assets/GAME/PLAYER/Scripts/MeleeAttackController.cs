@@ -5,6 +5,7 @@ public class MeleeAttackController : MonoBehaviour
 {
     public LayerMask enemyLayer;
     public EnemyController enemyController;
+    public float damage;
     Collider2D col;
 
     void Awake()
@@ -27,6 +28,6 @@ public class MeleeAttackController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if ( ((1 << other.gameObject.layer) & enemyLayer.value) == 0 ) return;
-        enemyController.RecieveHit();
+        enemyController.RecieveHit(damage);
     }
 }
